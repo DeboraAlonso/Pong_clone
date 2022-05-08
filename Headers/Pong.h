@@ -4,9 +4,13 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <Windows.h>
+#include <time.h>
+
 #include "Ball.h"
 #include "Paddle.h"
 #include "Score.h"
+
 
 using namespace sf;
 
@@ -33,6 +37,7 @@ public:
 	void update();
 
 
+
 private:
 
 	RenderWindow Wind;
@@ -49,7 +54,7 @@ private:
 
 	Music music;
 
-	bool gameOver;
+	bool isPlaying;
 
 	Ball ball;
 
@@ -58,6 +63,8 @@ private:
 	Paddle pad_IA;
 
 	Score score;
+
+	unsigned int sleep(unsigned int seconds);
 
 };
 #endif // !PONG_H
